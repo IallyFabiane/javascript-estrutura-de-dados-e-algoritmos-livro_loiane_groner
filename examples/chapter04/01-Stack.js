@@ -7,18 +7,18 @@ const { Stack } = PacktDataStructuresAlgorithms;
 const stack = new Stack(); // new StackArray();
 
 // using WeakMap to store Stack items we ensure true privacy
-// console.log(Object.getOwnPropertyNames(stack));
-// console.log(Object.keys(stack));
-// console.log(stack.items);
+console.log('Nomes das propriedades de Stack', Object.getOwnPropertyNames(stack));
+console.log('Nome das chaves de Stack', Object.keys(stack));
+console.log('Objeto items no índice count', stack.items);
 
 console.log('stack.isEmpty() => ', stack.isEmpty()); // outputs true
 
 stack.push(5);
-stack.push(8);
+stack.push(10);
 
-console.log('stack after push 5 and 8 => ', stack.toString());
+console.log('stack after push 5 and 10 => ', stack.toString());
 
-console.log('stack.peek() => ', stack.peek()); // outputs 8
+console.log('stack.peek() => ', stack.peek()); // outputs 10
 
 stack.push(11);
 

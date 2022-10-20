@@ -1,13 +1,13 @@
 // @ts-check
 
-export default class Stack {
+export default class Stack { // classe Stack criada como objeto JavaScript
   constructor() {
-    this.count = 0;
+    this.count = 0; // a variável count nos auxilia a manter o controle do tamanho da pilha
     this.items = {};
   }
 
-  push(element) {
-    this.items[this.count] = element;
+  push(element) { // agora o método push nos permite adicionar apenas um elemnto de cada vez
+    this.items[this.count] = element; // count é a chave do objeto items e element é o seu valor
     this.count++;
   }
 
@@ -28,12 +28,12 @@ export default class Stack {
     return this.items[this.count - 1];
   }
 
-  isEmpty() {
+  isEmpty() { // para saber se a pilha está fazia devemos checar se o valor da propriedade count é 0
     return this.count === 0;
   }
 
   size() {
-    return this.count;
+    return this.count; // a propriedade count também funciona como o tamanho da pilha!
   }
 
   clear() {

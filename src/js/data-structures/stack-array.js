@@ -5,27 +5,27 @@ export default class StackArray {
     this.items = [];
   }
 
-  push(element) {
+  push(element) { // método que adiciona um ou vários elementos no topo da pilha
     this.items.push(element);
   }
 
-  pop() {
+  pop() { // método que remove o elemento que está no topo da pilha. Também devolve o elemento removido
     return this.items.pop();
   }
 
-  peek() {
+  peek() { // método que devolve o elemento que está no topo da pilha, sem modificá-la
     return this.items[this.items.length - 1];
   }
 
-  isEmpty() {
+  isEmpty() { // método que devolve "true" se a pilha não contiver nenhum elemento e "false" se o número de elementos da pilha for maior que 0
     return this.items.length === 0;
   }
 
-  size() {
+  size() { // método que devolve o número de elementos em uma pilha, semelhante a propriedade lengthde um array
     return this.items.length;
   }
 
-  clear() {
+  clear() { // metodo que remove todos os elementos da pilha
     this.items = [];
   }
 
