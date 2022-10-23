@@ -7,12 +7,12 @@ export default class Queue {
     this.items = {};
   }
 
-  enqueue(element) { // método que adiciona elementos no final da  fila
+  enqueue(element) { // método que adiciona elementos no final da fila
     this.items[this.count] = element;
     this.count++;
   }
 
-  dequeue() { // método que remove elementos do início da fila
+  dequeue() { // método que remove o primeiro elemento da fila
     if (this.isEmpty()) {
       return undefined;
     }

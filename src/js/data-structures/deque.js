@@ -7,27 +7,28 @@ export default class Deque {
     this.items = {};
   }
 
-  addFront(element) {
+  addFront(element) { // método que adiciona um novo elemento na frente do deque
     if (this.isEmpty()) {
       this.addBack(element);
-    } else if (this.lowestCount > 0) {
+    } else if (this.lowestCount > 0) { // cenário no qual um elemento é removido da frente do deque
       this.lowestCount--;
       this.items[this.lowestCount] = element;
-    } else {
+    } else { // cenário no qual lowestCount == 0; movendo todos os elementos do deque a fim de deixar o index 0 livre
       for (let i = this.count; i > 0; i--) {
         this.items[i] = this.items[i - 1];
       }
       this.count++;
-      this.items[0] = element;
+      this.lowestCount = 0;
+      this.items[0] = element; // sobreescrevendo o index 0
     }
   }
 
-  addBack(element) {
+  addBack(element) { // método que adiciona um elemento no fim do deque
     this.items[this.count] = element;
     this.count++;
   }
 
-  removeFront() {
+  removeFront() { // método que remove o primeiro elemento do deque
     if (this.isEmpty()) {
       return undefined;
     }
@@ -37,7 +38,7 @@ export default class Deque {
     return result;
   }
 
-  removeBack() {
+  removeBack() { // método que remove o último elemento do deque
     if (this.isEmpty()) {
       return undefined;
     }
@@ -47,14 +48,14 @@ export default class Deque {
     return result;
   }
 
-  peekFront() {
+  peekFront() { // método que devolve o primeiro elemento do deque
     if (this.isEmpty()) {
       return undefined;
     }
     return this.items[this.lowestCount];
   }
 
-  peekBack() {
+  peekBack() { // método que devolve o último elemento do deque
     if (this.isEmpty()) {
       return undefined;
     }
