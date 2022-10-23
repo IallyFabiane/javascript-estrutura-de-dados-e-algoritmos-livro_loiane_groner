@@ -7,12 +7,12 @@ export default class Queue {
     this.items = {};
   }
 
-  enqueue(element) {
+  enqueue(element) { // método que adiciona elementos no final da  fila
     this.items[this.count] = element;
     this.count++;
   }
 
-  dequeue() {
+  dequeue() { // método que remove elementos do início da fila
     if (this.isEmpty()) {
       return undefined;
     }
@@ -22,24 +22,24 @@ export default class Queue {
     return result;
   }
 
-  peek() {
+  peek() { // método que retorna o elemento que está na frente da fila
     if (this.isEmpty()) {
       return undefined;
     }
     return this.items[this.lowestCount];
   }
 
-  isEmpty() {
+  isEmpty() { // método que retorna "true" se a fila estiver vazia e "false" se seu tamanho for maior que 0
     return this.size() === 0;
   }
 
-  clear() {
+  clear() { // método que permite apagar todos os os elemntos que estão na fila de uma única vez
     this.items = {};
     this.count = 0;
     this.lowestCount = 0;
   }
 
-  size() {
+  size() { // método que retorna o tamanho da fila
     return this.count - this.lowestCount;
   }
 
